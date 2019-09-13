@@ -10,17 +10,55 @@ namespace Rechner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Was machen?")
+            Console.WriteLine("Was machen?");
+            string rechnung = Console.ReadLine();
 
+            double zahl1 = Convert.ToDouble(Console.ReadLine());
+            double zahl2 = Convert.ToDouble(Console.ReadLine());
+
+            if (rechnung == "Plus")
+            {
+                
+                PlusRechnen(zahl1, zahl1);
+            }
+            else if(rechnung == "Minus")
+            {
+                MinusRechnen(zahl1, zahl2);
+            }
+            else if (rechnung  == "Multiplikation")
+            {
+                MultiplikationRechnen(zahl1, zahl2);
+            }
 
         }
-        public int Plus(int zahl1, int zahl2)
+        public static double PlusRechnen(double zahl1, double zahl2)
         {
-            zahl1 = Convert.ToInt32(Console.ReadLine());
-            zahl2 = Convert.ToInt32(Console.ReadLine());
-            int Ergebnis = zahl1 + zahl2;
+            
+            double Ergebnis = zahl1 + zahl2;
 
             Console.WriteLine(zahl1 + " + " + zahl2 + " = " + Ergebnis);
+            Console.ReadLine();
+
+            return Ergebnis;
+        }
+
+        public static double MinusRechnen(double zahl1, double zahl2)
+        {
+
+            double Ergebnis = zahl1 - zahl2;
+
+            Console.WriteLine(zahl1 + " - " + zahl2 + " = " + Ergebnis);
+            Console.ReadLine();
+
+            return Ergebnis;
+        }
+
+        public static double MultiplikationRechnen(double zahl1, double zahl2)
+        {
+
+            double Ergebnis = zahl1 * zahl2;
+
+            Console.WriteLine(zahl1 + " * " + zahl2 + " = " + Ergebnis);
             Console.ReadLine();
 
             return Ergebnis;
