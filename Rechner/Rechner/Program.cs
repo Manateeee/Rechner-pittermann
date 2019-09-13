@@ -10,28 +10,32 @@ namespace Rechner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Was machen?");
+            Console.WriteLine("Was machen? (+,-,*,/)");
             string rechnung = Console.ReadLine();
 
             double zahl1 = Convert.ToDouble(Console.ReadLine());
             double zahl2 = Convert.ToDouble(Console.ReadLine());
 
-            if (rechnung == "Plus")
+            if (rechnung == "+")
             {
 
                 PlusRechnen(zahl1, zahl1);
             }
-            else if (rechnung == "Minus")
+            else if (rechnung == "-")
             {
                 MinusRechnen(zahl1, zahl2);
             }
-            else if (rechnung == "Multiplikation")
+            else if (rechnung == "*")
             {
                 MultiplikationRechnen(zahl1, zahl2);
             }
             else if (rechnung == "/")
             {
                 GeteiltRechnen(zahl1, zahl2);
+            }
+            else
+            {
+                Console.Write("gibts nicht");
             }
 
         }
