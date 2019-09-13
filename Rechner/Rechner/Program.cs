@@ -18,16 +18,20 @@ namespace Rechner
 
             if (rechnung == "Plus")
             {
-                
+
                 PlusRechnen(zahl1, zahl1);
             }
-            else if(rechnung == "Minus")
+            else if (rechnung == "Minus")
             {
                 MinusRechnen(zahl1, zahl2);
             }
-            else if (rechnung  == "Multiplikation")
+            else if (rechnung == "Multiplikation")
             {
                 MultiplikationRechnen(zahl1, zahl2);
+            }
+            else if (rechnung == "/")
+            {
+                GeteiltRechnen(zahl1, zahl2);
             }
 
         }
@@ -59,6 +63,17 @@ namespace Rechner
             double Ergebnis = zahl1 * zahl2;
 
             Console.WriteLine(zahl1 + " * " + zahl2 + " = " + Ergebnis);
+            Console.ReadLine();
+
+            return Ergebnis;
+        }
+
+        public static double GeteiltRechnen(double zahl1, double zahl2)
+        {
+
+            double Ergebnis = zahl1 / zahl2;
+
+            Console.WriteLine(zahl1 + " / " + zahl2 + " = " + Ergebnis);
             Console.ReadLine();
 
             return Ergebnis;
