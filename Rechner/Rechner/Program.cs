@@ -10,33 +10,48 @@ namespace Rechner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Was machen? (+,-,*,/)");
+            Console.WriteLine("Was machen? (+,-,*,/,²)");
             string rechnung = Console.ReadLine();
 
+            Console.Write("Zahl1: ");
             double zahl1 = Convert.ToDouble(Console.ReadLine());
-            double zahl2 = Convert.ToDouble(Console.ReadLine());
 
-            if (rechnung == "+")
+            if (rechnung == "+" || rechnung == "-" || rechnung == "*" || rechnung == "/")
             {
+                Console.Write("Zahl2:");
+                double zahl2 = Convert.ToDouble(Console.ReadLine());
 
-                PlusRechnen(zahl1, zahl1);
-            }
-            else if (rechnung == "-")
-            {
-                MinusRechnen(zahl1, zahl2);
-            }
-            else if (rechnung == "*")
-            {
-                MultiplikationRechnen(zahl1, zahl2);
-            }
-            else if (rechnung == "/")
-            {
-                GeteiltRechnen(zahl1, zahl2);
+                if (rechnung == "+")
+                {
+
+                    PlusRechnen(zahl1, zahl1);
+                }
+                else if (rechnung == "-")
+                {
+                    MinusRechnen(zahl1, zahl2);
+                }
+                else if (rechnung == "*")
+                {
+                    MultiplikationRechnen(zahl1, zahl2);
+                }
+                else if (rechnung == "/")
+                {
+                    GeteiltRechnen(zahl1, zahl2);
+                }
+                else
+                {
+                    Console.Write("gibts nicht");
+                }
+
             }
             else
             {
-                Console.Write("gibts nicht");
+                if (rechnung == "²")
+                {
+                    QuadratRechnen(zahl1);
+                }
             }
+            
 
         }
         public static double PlusRechnen(double zahl1, double zahl2)
@@ -81,6 +96,16 @@ namespace Rechner
             Console.ReadLine();
 
             return Ergebnis;
+        }
+
+        public static double QuadratRechnen(double zahl1)
+        {
+            double Ergebnis = zahl1 * zahl1;
+            Console.WriteLine(zahl1 + "²" + " = " + Ergebnis);
+            Console.ReadLine();
+
+            return Ergebnis;
+
         }
     }
 }
